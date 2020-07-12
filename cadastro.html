@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Public/styles/main.css">
+    <link rel="stylesheet" href="Public/styles/cadastro.css">
+    <link rel="stylesheet" href="Public/styles/responsive.css">
+    <title>Cadastro de Ajuda</title>
+  </head>
+  <body>
+    <div id="page-cadastro">
+        <header>
+          <img src="Public/assets/icones/logo.svg" alt="Logomarca">
+
+          <a href="#"><span></span> Voltar para a home</a>
+        </header>
+
+        <form action="">
+          <h1>Cadastro de ajuda</h1>
+          <fieldset>
+            <legend>
+              <h2>Dados Pessoal</h2>
+            </legend>
+
+            <div class="field">
+              <label for="name">Nome Completo</label>
+              <input type="text" name="name">
+
+              <label for="description">Descrição da ajuda</label>
+              <textarea name="description" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="field-group">
+              <div class="field">
+                <label for="address">Endereço</label>
+                <input type="text" name="address">
+              </div>
+              <div class="field">
+                <label for="address2">Número/Complemento</label>
+                <input type="text" name="address2">
+              </div>
+            </div>
+
+            <div class="field-group">
+              <div class="field">
+                <label for="state">Estado</label>
+                <select name="uf">
+                  <option value="">Selecione o estado</option>
+                </select>
+                <input type="hidden" name="state">
+              </div>
+              <div class="field">
+                <label for="city">Cidade</label>
+                <select name="city" disabled>
+                  <option value="">Selecione a cidade</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <h2>Formas de Contato</h2>
+            </legend>
+          </fieldset>
+
+          <button type="submit">Cadastrar ajuda</button>
+        </form>
+
+    </div>
+
+    <script src="Public/scripts/cadastro.js"></script>
+  </body>
+</html>
