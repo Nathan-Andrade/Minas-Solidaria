@@ -30,3 +30,47 @@ function getCities(event){
   })
 }
 document.querySelector("select[name=uf]").addEventListener("change", getCities)
+
+//Contatos para ajuda
+//Pegar todas as li
+const contatosToHelp = document.querySelectorAll(".contatos-grid li")
+
+for( const contato of contatosToHelp){
+  contato.addEventListener("click", handleMarkedContato)
+}
+
+const collectedContatos = document.querySelector("input[name=contatos]")
+
+let selectedContatos = []
+
+function handleMarkedContato(){
+  const contatoLi = event.target
+  //adicionar ou remover uma classe com javascript
+  contatoLi.classList.toggle("marked")
+
+  const contatoId = contatoLi.dataset.id
+
+  //verificar se existem contatos que estão selecionados, se sim
+  //pegar os contatos selecionados
+  const alreadySelected = selectedContatos.findIndex( contato =>{
+    const contatofound = contato == contatoId //isso vai ser o verdadeiro ou falso
+    return contatofound
+  })
+
+  //se já estiver selecionado tirar da seleção
+  if(alreadySelected >= 0){
+    //tirar da seleção
+    const filteredContatos = selectedContatos.filter(contato => {
+      const contatoIsDifferent = contato != contatoId
+      return contatoIsDifferent
+    })
+    selectedContatos = filteredContatos
+  }else{
+    //se não estiver selecionado,
+    //add a seleção
+    selectedContatos.push(contatoId)
+  }
+
+  //atualizar o campo escondido com contatos selecionados
+  collectedContatos.value = selectedContatos
+}
