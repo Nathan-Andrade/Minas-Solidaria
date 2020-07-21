@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Public/styles/main.css">
     <link rel="stylesheet" href="Public/styles/home.css">
+    <link rel="stylesheet" href="Public/styles/modal.css">
+    
     <link rel="stylesheet" href="Public/styles/responsive.css">
     <title>Minas Solidária</title>
   </head>
@@ -14,7 +16,7 @@
         <header>
           <img src="Public/assets/icones/logo.svg" alt="Logomarca">
 
-          <a href="#"><span></span> Cadastre-se para ser ajudado</a>
+          <a href="./cadastro.html"><span></span> Cadastre-se para ser ajudado</a>
         </header>
 
         <main>
@@ -31,5 +33,25 @@
         </main>
       </div>
     </div>
+
+    <div id="modal" class="hide">
+      <div class="content">
+        <div class="header">
+          <h1>Pessoas para ajudar</h1>
+          <a href="#">Fechar</a>
+        </div>
+        <form action="./search-cadastro.html">
+          <label for="search">Cidade</label>
+          <div class="search field">
+            <input type="text" name="search" placeholder="Pesquise por cidade">
+            <button>
+              <img src="Public/assets/icones/search.svg" alt="">
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="Public/scripts/index.js"></script>
   </body>
 </html>
