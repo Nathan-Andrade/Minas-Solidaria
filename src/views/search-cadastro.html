@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Public/styles/main.css">
-    <link rel="stylesheet" href="Public/styles/search-cadastro.css">
-    <link rel="stylesheet" href="Public/styles/responsive.css">
-    <title>Cadastro de Ajuda</title>
-  </head>
-  <body>
-    <div id="page-search-cadastro">
-        <header>
-          <img src="Public/assets/icones/logo.svg" alt="Logomarca">
+{% extends "layout.html" %}
 
-          <a href="./index.html"><span></span> Voltar para a home</a>
-        </header>
+{% set pageId = "page-search-cadastro" %}
 
+{% block styles %}
+  <link rel="stylesheet" href="/styles/search-cadastro.css">
+{% endblock styles  %}
+    
+{% block title %}
+<title>Ajudas encontradas</title>
+{% endblock title %}    
+    
+{% block content %}
+  {% include "partials/page-header.html" %}
         <main>
           <h4>
             <strong>2 Cadastros</strong> encontrados
@@ -31,6 +27,7 @@
                 Prosperidade, Rua Eldorado <br>
                 N°552
               </p>
+              <br>
               <a href="#">WhatsApp</a>
               <a href="#">Gmail</a>
             </div>
@@ -46,13 +43,14 @@
                 Prosperidade, Rua Eldorado <br>
                 N°552
               </p>
+              <br>
               <a href="#">WhatsApp</a>
               <a href="#">Gmail</a>
             </div>
           </div>
         </main>
-    </div>
+{% endblock content %}
 
-    <script src="Public/scripts/cadastro.js"></script>
-  </body>
-</html>
+{% block scripts %}
+<script src="/scripts/cadastro.js"></script>
+{% endblock scripts %}
