@@ -4,18 +4,20 @@
 
 {% block styles %}
   <link rel="stylesheet" href="/styles/cadastro.css">
-{% endblock styles %}  
+{% endblock styles %}
 
-    {% block title %}
-     <title>Cadastro de Ajudas</title>
-    {% endblock title %}
+
+{% block title %}
+  <title>Cadastro de Ajudas</title>
+{% endblock title %}
 
 {% block content %}
-    {% include "partials/page-header.html" %}     
-  <form action="">
+  {% include "partials/page-header.html" %}
+
+  <form action="/saveajuda" method="POST">
     <h1>Cadastro de Ajudas</h1>
 
-    <fieldset> 
+    <fieldset>
       <legend>
         <h2>Dados Pessoal</h2>
       </legend>
@@ -60,7 +62,7 @@
             <option value="">Selecione a cidade</option>
           </select>
         </div>
-        
+
       </div>
     </fieldset>
 
@@ -71,29 +73,29 @@
       </legend>
 
       <div class="contatos-grid">
-        <li data-id="1" class="marked">
+        <li data-id="WhatsApp" class="marked">
           <img src="/assets/icones/whatsapp.svg" alt="WhatsApp" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos">
         </li>
-        <li data-id="2">
+        <li data-id="Gmail">
           <img src="/assets/icones/gmail.svg" alt="Gmail" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos2">
         </li>
-        <li data-id="3">
+        <li data-id="linkedIn">
           <img src="/assets/icones/linkedin.svg" alt="linkedIn" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos3">
         </li>
-        <li data-id="4">
+        <li data-id="Messenger">
           <img src="/assets/icones/messenger.svg" alt="Messenger" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos4">
         </li>
-        <li data-id="5">
+        <li data-id="Instagram">
           <img src="/assets/icones/instagram-sketched.svg" alt="Instagram" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos5">
         </li>
-        <li data-id="6">
+        <li data-id="Telegram">
           <img src="/assets/icones/telegram.svg" alt="Telegram" width="60px" height="60px">
-          <input type="text">
+          <input type="url" name="contatos6">
         </li>
       </div>
 
@@ -102,8 +104,10 @@
 
     <button type="submit">Cadastrar ajuda</button>
   </form>
+
 {% endblock content %}
 
+
 {% block scripts %}
-  <script src="/scripts/cadastro.js"></script>
+<script src="/scripts/cadastro.js"></script>
 {% endblock scripts %}

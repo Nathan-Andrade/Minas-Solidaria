@@ -35,7 +35,7 @@ document.querySelector("select[name=uf]").addEventListener("change", getCities)
 //Pegar todas as li
 const contatosToHelp = document.querySelectorAll(".contatos-grid li")
 
-for( const contato of contatosToHelp){
+for (const contato of contatosToHelp){
   contato.addEventListener("click", handleMarkedContato)
 }
 
@@ -50,27 +50,31 @@ function handleMarkedContato(){
 
   const contatoId = contatoLi.dataset.id
 
-  //verificar se existem contatos que estão selecionados, se sim
+  //console.log(`ITEM ID:`, contatoId)
+  
+  //verificar se existem contatos estão selecionados, se sim
   //pegar os contatos selecionados
   const alreadySelected = selectedContatos.findIndex( contato =>{
-    const contatofound = contato == contatoId //isso vai ser o verdadeiro ou falso
-    return contatofound
+    const contatoFound = contato == contatoId //isso será true or false
+    return contatoFound
   })
 
   //se já estiver selecionado tirar da seleção
   if(alreadySelected >= 0){
-    //tirar da seleção
-    const filteredContatos = selectedContatos.filter(contato => {
+    //tirar da selecao
+    const filteredContatos = selectedContatos.filter(contato =>{
       const contatoIsDifferent = contato != contatoId
       return contatoIsDifferent
     })
     selectedContatos = filteredContatos
   }else{
     //se não estiver selecionado,
-    //add a seleção
+    //adicionar a selecao
     selectedContatos.push(contatoId)
   }
 
-  //atualizar o campo escondido com contatos selecionados
+  //console.log(`selectedContatos:`, selectedContatos)
+
+  //atualizar o campo escondido com os contatos selecionados
   collectedContatos.value = selectedContatos
 }

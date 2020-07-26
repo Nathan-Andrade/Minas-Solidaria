@@ -2,7 +2,7 @@
   width: 90%;
   max-width: 1100px;
 
-  /*Alihamento fora da caixa*/
+  /*Alinhamento pelo lado de fora da caixa*/
   margin: 0 auto;
 }
 #page-cadastro header{
@@ -21,15 +21,13 @@
 }
 #page-cadastro header a span{
   background-image: url("../assets/icones/arrow-left.svg");
-
-  display: flex;
-  margin-right: 16px;
-
+ display: flex;
+ margin-right: 16px;
   width: 20px;
   height: 20px;
 }
 form{
-  background-color: #f0f0f5;
+  background-color: white;
 
   /*Preenchimento*/
   padding: 64px;
@@ -37,25 +35,37 @@ form{
   border-radius: 8px;
 
   max-width: 730px;
+  
 }
+
 form h1{
   font-size: 36px;
 }
 form fieldset{
   margin-top: 64px;
+
   border: 0;
 }
 form legend{
   margin-bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
 }
 form legend h2{
   font-size: 24px;
+}
+form legend span{
+  color: var(--title-color);
 }
 form .field{
   flex: 1;
   display: flex;
   flex-direction: column;
-
+  
   margin-bottom: 24px;
 }
 form .field-group{
@@ -64,7 +74,7 @@ form .field-group{
 form input,
 form select,
 form textarea{
-  background-color: white;
+  background-color: #f0f0f5;
 
   border: 0;
   padding: 16px 24px;
@@ -78,7 +88,7 @@ form select{
   appearance: none;
 }
 form label{
-  font-size: 14px;
+  font: 14px;
   margin-bottom: 8px;
 }
 form .field-group .field + .field{
@@ -88,7 +98,7 @@ form button{
   width: 260px;
   height: 56px;
 
-  background-color: var(--title-color);
+  background-color: orangered;
   border-radius: 8px;
   border: 0;
 
@@ -100,12 +110,12 @@ form button{
   transition: 400ms;
 }
 form button:hover{
-  background-color: rgba(167, 10, 10, 0.8);
+  background-color: var(--primary-color);
 }
 
 .contatos-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
   gap: 16px;
 }
 .contatos-grid li{
@@ -124,4 +134,8 @@ form button:hover{
   justify-content: space-between;
 
   cursor: pointer;
+}
+.contatos-grid li.marked{
+  background-color: palegreen;
+  border: 2px solid var(--primary-color);
 }
